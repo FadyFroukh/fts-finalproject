@@ -1,0 +1,21 @@
+@import "../../utilities/styles/utils.module.scss";
+
+.login-page{
+    height: 100vh;
+    @include flex(column);
+    @include flex-item-center();
+
+    .login-form{
+        width: 400px;
+    }
+
+    .form-image{
+        width:150px;
+        height: 150px;
+        margin: 10px 0;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

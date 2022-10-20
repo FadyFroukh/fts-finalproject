@@ -1,0 +1,70 @@
+//General Settings
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin flex($dir){
+    display: flex;
+    flex-direction: $dir;
+}
+
+@mixin flex-item-center() {
+    justify-content: center;
+    align-items: center;
+}
+
+//Flexbox Settings
+
+.flex{
+    @include flex(row);
+}
+
+.flex-col{
+    @include flex(column);
+}
+
+.flex-item-center{
+    @include flex-item-center();
+}
+
+//Forms Settings
+
+.form-section{
+    @include flex(row);
+    margin: 8px 0;
+    width: 100%;
+    .form-div{
+        @include flex(column);
+        margin-right: 7px;
+        width: 100%;
+        label{
+            margin: 8px 0;
+        }
+        input,div{
+            width: 100%;
+        }
+    }
+}
+
+.btn-div{
+    @include flex(row);
+    @include flex-item-center();
+    margin: 8px 0;
+}
+
+.loading-card{
+    width: 80px;
+    height: 80px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.alert-card{
+    @include flex(row);
+    @include flex-item-center();
+    width: 100%;
+    margin: 7px 0;
+}
