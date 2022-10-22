@@ -1,0 +1,47 @@
+@import "../../../utilities/styles/utils.module.scss";
+
+.pos-page{
+    @include flex(column);
+    min-height: 100vh;
+    .pos-page-wrapper{
+        width: 100%;
+        @include flex(row);
+        .cart{
+            width: 30%;
+            min-height: 100vh;
+        }
+        .pos-main{
+            @include flex(column);
+            width: 70%;
+            min-height: 100vh;
+            .pos-header{
+                height: 10vh;
+                padding: 1rem;
+                nav{
+                    @include flex(row);
+                    @include flex-item-between();
+                }
+            }
+
+            .search-form{
+                padding: 0 10px;
+                margin-bottom: 1rem;
+                div{
+                    width: 100%;
+                }
+            }
+
+            .products{
+                @include flex(row);
+                flex-wrap: wrap;
+                .product{
+                    width: 150px;
+                    height: 150px;
+                    background-color: lightblue;
+                    margin: 0  0 .8rem .4rem;
+                    border-radius: 1rem;
+                }
+            }
+        }
+    }
+}

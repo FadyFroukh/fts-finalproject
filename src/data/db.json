@@ -5,5 +5,94 @@
       "username": "fady",
       "password": "123456"
     }
+  ],
+  "products": [
+    {
+      "productCode": "code1",
+      "productName": "Bananas",
+      "productCategory": "fruits",
+      "productImage": "fruit1.png",
+      "id": 1
+    },
+    {
+      "productCode": "code2",
+      "productName": "Apples",
+      "productCategory": "fruits",
+      "productImage": "fruit2.png",
+      "id": 2
+    },
+    {
+      "productCode": "code3",
+      "productName": "Mangos",
+      "productCategory": "fruits",
+      "productImage": "fruit3.png",
+      "id": 3
+    },
+    {
+      "productCode": "code4",
+      "productName": "Peaches",
+      "productCategory": "fruits",
+      "productImage": "fruit4.png",
+      "id": 4
+    },
+    {
+      "productCode": "code5",
+      "productName": "Grapes",
+      "productCategory": "fruits",
+      "productImage": "fruit5.png",
+      "id": 5
+    },
+    {
+      "productCode": "code6",
+      "productName": "Cucumberes",
+      "productCategory": "vegetables",
+      "productImage": "vegs1.png",
+      "id": 6
+    },
+    {
+      "productCode": "code7",
+      "productName": "Eggplants",
+      "productCategory": "vegetables",
+      "productImage": "vegs2.png",
+      "id": 7
+    },
+    {
+      "productCode": "code8",
+      "productName": "Carrots",
+      "productCategory": "vegetables",
+      "productImage": "vegs3.png",
+      "id": 8
+    },
+    {
+      "productCode": "code9",
+      "productName": "Broccoli",
+      "productCategory": "vegetables",
+      "productImage": "vegs4.png",
+      "id": 9
+    },
+    {
+      "productCode": "code10",
+      "productName": "Onions",
+      "productCategory": "vegetables",
+      "productImage": "vegs5.png",
+      "id": 10
+    },
+    {
+      "productCode": "code11",
+      "productName": "Potatos",
+      "productCategory": "vegetables",
+      "productImage": "vegs6.png",
+      "id": 11
+    }
+  ],
+  "categories": [
+    {
+      "categoryName": "fruits",
+      "categoryId": "category1"
+    },
+    {
+      "categoryName": "vegetables",
+      "categoryId": "category2"
+    }
   ]
 }

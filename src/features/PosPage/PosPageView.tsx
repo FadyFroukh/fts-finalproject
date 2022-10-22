@@ -1,0 +1,76 @@
+import Cart from "./components/Cart";
+import Products from "./components/Products";
+import ProductsHeader from "./components/ProductsHeader";
+import ProductsSearch from "./components/ProductsSearch";
+import styles from "./styles/PosPage.module.css";
+import FormModal from "../../utilities/components/FormModal";
+import AddProductForm from "./components/AddProductForm";
+import { createContext, Dispatch, SetStateAction, useState } from "react";
+import DeleteProductForm from "./components/DeleteProductForm";
+import EditProductForm from "./components/EditProductForm";
+
+export type PosPageContext = {
+  setAddOpen: Dispatch<SetStateAction<boolean>>,
+  setDeleteOpen:Dispatch<SetStateAction<boolean>>,
+  setEditOpen:Dispatch<SetStateAction<boolean>>,
+  setProductId:Dispatch<SetStateAction<number>>,
+  productId:number,
+};
+
+export const posContext = createContext<PosPageContext>({
+  setAddOpen:()=>{},
+  setDeleteOpen:()=>{},
+  setEditOpen:()=>{},
+  setProductId:()=>{},
+  productId:0
+});
+
+const PosPageView = () => {
+  const [addOpen,setAddOpen] = useState(false);
+  const [deleteOpen,setDeleteOpen] = useState(false);
+  const [editOpen,setEditOpen] = useState(false);
+  const [productId,setProductId] = useState(0);
+  return (
+      <posContext.Provider value={{setAddOpen,setDeleteOpen,setEditOpen,productId,setProductId}}>
+        <div className={styles['pos-page-wrapper']}>
+        {
+        addOpen && 
+        <FormModal 
+            open={addOpen} 
+            setOpen={setAddOpen}
+            message="Add a Product"
+            >
+                <AddProductForm/>
+        </FormModal>
+      }
+      {
+        deleteOpen && <FormModal 
+        open={deleteOpen} 
+        setOpen={setDeleteOpen} 
+        message="Delete a Product Modal"
+        >
+          <DeleteProductForm setDeleteOpen={setDeleteOpen}/>
+        </FormModal>
+      }
+      {
+        editOpen && <FormModal 
+        open={editOpen} 
+        setOpen={setEditOpen} 
+        message="Edit a Product Modal"
+        >
+          <EditProductForm/>
+        </FormModal>
+      }
+
+        <Cart/>
+        <section className={styles['pos-main']}>
+            <ProductsHeader/>
+            <ProductsSearch/>
+            <Products/>
+        </section>
+    </div>
+      </posContext.Provider>
+  )
+}
+
+export default PosPageView

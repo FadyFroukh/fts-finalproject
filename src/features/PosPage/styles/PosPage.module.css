@@ -79,8 +79,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .add-product-form {
@@ -97,4 +96,53 @@
 .edit-product-form {
   margin-top: 20px;
   width: 100%;
-}/*# sourceMappingURL=utils.module.css.map */
+}
+
+.pos-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.pos-page .pos-page-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.pos-page .pos-page-wrapper .cart {
+  width: 30%;
+  min-height: 100vh;
+}
+.pos-page .pos-page-wrapper .pos-main {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  min-height: 100vh;
+}
+.pos-page .pos-page-wrapper .pos-main .pos-header {
+  height: 10vh;
+  padding: 1rem;
+}
+.pos-page .pos-page-wrapper .pos-main .pos-header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.pos-page .pos-page-wrapper .pos-main .search-form {
+  padding: 0 10px;
+  margin-bottom: 1rem;
+}
+.pos-page .pos-page-wrapper .pos-main .search-form div {
+  width: 100%;
+}
+.pos-page .pos-page-wrapper .pos-main .products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.pos-page .pos-page-wrapper .pos-main .products .product {
+  width: 150px;
+  height: 150px;
+  background-color: lightblue;
+  margin: 0 0 0.8rem 0.4rem;
+  border-radius: 1rem;
+}/*# sourceMappingURL=PosPage.module.css.map */

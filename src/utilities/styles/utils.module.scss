@@ -14,6 +14,10 @@
     align-items: center;
 }
 
+@mixin flex-item-between{
+    justify-content: space-between;
+}
+
 //Flexbox Settings
 
 .flex{
@@ -67,4 +71,33 @@
     @include flex-item-center();
     width: 100%;
     margin: 7px 0;
+}
+
+.actions{
+    @include flex(row);
+    @include flex-item-center();
+    width: 100%;
+    button{
+        margin-right: 5px;
+    }
+}
+
+.zero-count{
+    width: 100%;
+    @include flex(row);
+    @include flex-item-center();
+}
+
+.add-product-form{
+    width: 100%;
+}
+.delete-product-form{
+    margin-top: 20px;
+    button{
+        margin-right: 10px;
+    }
+}
+.edit-product-form{
+    margin-top: 20px;
+    width: 100%;
 }
