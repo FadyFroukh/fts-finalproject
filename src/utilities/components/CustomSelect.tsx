@@ -9,11 +9,7 @@ type CustomSelectProps = {
 }
 
 const CustomSelect = ({field}:CustomSelectProps) => {
-    const [age, setAge] = useState('');
-    const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value as string);
-    };
-     
+    
     const categories = useAppSelector(selectAllCategories);
 
     const dispatch = useAppDispatch();

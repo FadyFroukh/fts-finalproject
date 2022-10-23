@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, InputLabel } from "@mui/material";
 import { useContext, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../../hooks/hooks";
@@ -6,7 +6,7 @@ import ZeroCount from "../../../utilities/components/ZeroCount";
 import { fetchCategories, selectAllCategories } from "../posPageSlice";
 import { posContext } from "../PosPageView";
 import styles from "../styles/PosPage.module.css";
-import CategoryButton from "./CategoryButton";
+import HeaderSelect from "./HeaderSelect";
 
 const ProductsHeader = () => {
 
@@ -25,12 +25,12 @@ const ProductsHeader = () => {
   return (
     <header className={styles['pos-header']}>
         <nav>
-            <div>
+            <div className={styles['categories']}>
+                <InputLabel>Filter By Category</InputLabel>
                 {
                     categories.length > 0 ? 
-                    categories.map(category=>(
-                        <CategoryButton category={category} key={category.categoryId}/>
-                    )) : <ZeroCount message="No Current Categories"/>
+                        <HeaderSelect items={categories}/>
+                    : <ZeroCount message="No Current Categories"/>
                 }
             </div>
             <div>

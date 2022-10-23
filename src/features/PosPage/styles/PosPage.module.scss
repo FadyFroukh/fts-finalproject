@@ -17,9 +17,17 @@
             .pos-header{
                 height: 10vh;
                 padding: 1rem;
+                margin-bottom: 1.3rem;
                 nav{
                     @include flex(row);
                     @include flex-item-between();
+                    .categories{
+                        @include flex(row);
+                        @include flex-item-center();
+                        label{
+                            margin-right: .5rem;
+                        }
+                    }
                 }
             }
 

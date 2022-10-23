@@ -4,6 +4,7 @@ import styles from "../styles/PosPage.module.css";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { filterBySearchValue } from "../posPageSlice";
 import { FormEvent, useEffect } from "react";
+import { InputLabel } from "@mui/material";
 
 type initialValues = {
   searchText:string
@@ -36,6 +37,7 @@ const ProductsSearch = () => {
     >
       <Form method="POST" className={styles['search-form']}>
         <FormObserver/>
+          <InputLabel>Search a Product By Name</InputLabel>
           <Field name='searchText'>
             {
               (props)=> {

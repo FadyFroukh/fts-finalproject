@@ -123,12 +123,12 @@ const posPageSlice = createSlice({
             }
         },
         filterByCategory:{
-            reducer(state,action:PayloadAction<Category>){
-                state.mappedProducts = state.products.filter(product=>product.productCategory === action.payload.categoryName);
+            reducer(state,action:PayloadAction<string>){
+                state.mappedProducts = state.products.filter(product=>product.productCategory === action.payload);
             },
-            prepare(category){
+            prepare(categoryName){
                 return{
-                    payload:category
+                    payload:categoryName
                 }
             }
         },
