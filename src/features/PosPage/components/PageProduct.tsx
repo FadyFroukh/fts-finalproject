@@ -4,10 +4,11 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
 import Actions from "../../../utilities/components/Actions";
 import Action from "../../../utilities/components/Action";
-import {fetchProduct, Product} from "../posPageSlice";
+import {patchCart, fetchCarts, fetchProduct, Product, selectCarts} from "../posPageSlice";
 import { useContext } from "react";
 import { posContext } from "../PosPageView";
-import { useAppDispatch } from "../../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { Box } from "@mui/system";
 
 type productProps = {
   product:Product
@@ -15,9 +16,11 @@ type productProps = {
 
 const PageProduct = ({product}:productProps) => {
 
+  const carts = useAppSelector(selectCarts);
+
   const dispatch = useAppDispatch();
 
-  const {setDeleteOpen,setEditOpen,setProductId} = useContext(posContext);
+  const {setDeleteOpen,setEditOpen,setCartsOpen,setProductId,setProduct} = useContext(posContext);
 
   const handleDelete = ()=>{
     setDeleteOpen(true);
@@ -30,7 +33,36 @@ const PageProduct = ({product}:productProps) => {
   };
 
   const handleAddToCart = ()=>{
+    setProduct(product);
+    if(carts.length > 1){
+      setCartsOpen(true);
+    }
+    else {
+      let updatedProducts = [] as Product[];
+      if(!carts[0].products.find(prod=>prod.id === product.id)){
+          updatedProducts = carts[0].products.map(prod=>prod);
+          updatedProducts.push(product);
+      }else {
+          updatedProducts = carts[0].products.map(prod=>{
+              if (prod.id === product.id){
+                  return {
+                      id:prod.id,
+                      productCode:prod.productCode,
+                      productName:prod.productName,
+                      productCategory:prod.productCategory,
+                      productImage:prod.productImage,
+                      productPrice:prod.productPrice,
+                      count:prod.count + 1
+                  } as Product;
+              }
 
+              return prod;
+          });
+      }
+    dispatch(patchCart({cartId:carts[0].id,updatedProducts}));
+    dispatch(fetchCarts());
+    setCartsOpen(false);
+    }
   }
 
   return (
@@ -42,9 +74,14 @@ const PageProduct = ({product}:productProps) => {
         alt={`${product.productName}`}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {product.productName}
-        </Typography>
+        <Box sx={{display:'flex',justifyContent:'space-between'}}>
+          <Typography gutterBottom variant="h5" component="div">
+            {product.productName}
+          </Typography>
+          <Typography>
+            <strong>{product.productPrice}$</strong>
+          </Typography>
+        </Box>
         <Typography variant="body2" color="text.secondary">
           {product.productCategory}
         </Typography>

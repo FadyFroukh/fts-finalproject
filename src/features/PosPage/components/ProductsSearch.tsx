@@ -1,9 +1,9 @@
-import { Formik,Form, Field, FormikProps, useFormikContext } from "formik";
+import { Formik,Form, Field,useFormikContext } from "formik";
 import InputLabelFade from "../../../utilities/components/InputLabelFade";
 import styles from "../styles/PosPage.module.css";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { filterBySearchValue } from "../posPageSlice";
-import { FormEvent, useEffect } from "react";
+import {useEffect } from "react";
 import { InputLabel } from "@mui/material";
 
 type initialValues = {
@@ -31,9 +31,7 @@ const ProductsSearch = () => {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={(values)=>{
-        dispatch(filterBySearchValue(values.searchText));
-      }}
+      onSubmit={(values)=>{}}
     >
       <Form method="POST" className={styles['search-form']}>
         <FormObserver/>

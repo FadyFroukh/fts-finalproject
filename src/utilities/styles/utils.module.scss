@@ -18,6 +18,11 @@
     justify-content: space-between;
 }
 
+@mixin flex-center-between() {
+    justify-content: space-between;
+    align-items: center;
+}
+
 //Flexbox Settings
 
 .flex{

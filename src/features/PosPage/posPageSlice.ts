@@ -13,14 +13,31 @@ export type Product = {
     productCode:string,
     productName:string,
     productCategory:string,
-    productImage:string
+    productImage:string,
+    productPrice:number,
+    count:number
 };
+
 
 export type Category = {
     categoryId:string,
     categoryName:string
 };
 
+export type Cart = {
+    id:number,
+    products:Product[],
+}
+
+type updatedCartProps = {
+    updatedProducts:Product[],
+    cartId:number
+}
+
+export type CartSearch = {
+    cartId:number,
+    searchText:string
+}
 type initialState = {
     product:Product,
     productsLoading:boolean
@@ -37,6 +54,9 @@ type initialState = {
     deleteProductSuccess:string,
     editProductError:string,
     editProductSuccess:string,
+    carts:Cart[],
+    cartsLoading:boolean,
+    cartsError:string
 };
 
 //Initial State
@@ -47,7 +67,9 @@ const initialState : initialState = {
         productCode:"",
         productName:"",
         productCategory:"",
-        productImage:""
+        productImage:"",
+        productPrice:0,
+        count:1
     },
     productsLoading:false,
     products:[],
@@ -63,6 +85,9 @@ const initialState : initialState = {
     deleteProductError:'',
     editProductError:'',
     editProductSuccess:'',
+    carts:[],
+    cartsLoading:false,
+    cartsError:""
 }
 
 //Action Creators
@@ -75,6 +100,7 @@ export const selectProduct = (state:RootState)=> state.posPage.product;
 
 export const selectAllCategories = (state:RootState) => state.posPage.categories;
 
+export const selectCarts = (state:RootState)=> state.posPage.carts;
 
 //Async Functions
 
@@ -86,12 +112,14 @@ export const fetchProducts = createAsyncThunk("posPage/fetchProducts",()=>{
     return axios.get(`${link}/products`).then(res => res.data);
 });
 
-export const addProduct = createAsyncThunk("posPage/addProduct",({productCode,productName,productCategory,productImage}:addProductValues)=>{
+export const addProduct = createAsyncThunk("posPage/addProduct",({productCode,productName,productCategory,productImage,productPrice}:addProductValues)=>{
     return axios.post(`${link}/products`,{
         productCode,
         productName,
         productCategory,
-        productImage
+        productImage,
+        productPrice,
+        count:1
     }).then(res => res.data);
 });
 
@@ -104,7 +132,26 @@ export const editProduct = createAsyncThunk("posPage/editProduct",(product:Produ
         productCode:product.productCode,
         productName:product.productName,
         productCategory:product.productCategory,
-        productImage:product.productImage
+        productImage:product.productImage,
+        productPrice:product.productPrice
+    }).then(res=>res.data);
+});
+
+export const fetchCarts = createAsyncThunk("posPage/fetchCarts",()=>{
+    return axios.get(`${link}/carts`).then(res => res.data);
+});
+
+export const addNewCart = createAsyncThunk("posPage/addNewCart",()=>{
+    return axios.post(`${link}/carts`,{products:[]}).then(res=>res.data);
+});
+
+export const deleteCart = createAsyncThunk("posPage/deleteCart",(id:number)=>{
+    return axios.delete(`${link}/carts/${id}`).then(res=>res.data);
+});
+
+export const patchCart = createAsyncThunk("posPage/patchCart",({cartId,updatedProducts}:updatedCartProps)=>{
+    return axios.patch(`${link}/carts/${cartId}`,{
+        products:updatedProducts
     }).then(res=>res.data);
 });
 
@@ -151,7 +198,7 @@ const posPageSlice = createSlice({
                     payload:true
                 }
             }
-        },
+        }
     },
     extraReducers:(builder)=>{
         //Fetch Categories Cases
@@ -223,9 +270,23 @@ const posPageSlice = createSlice({
             state.editProductSuccess = '';
             state.editProductError = action.error.message || "Product Edit Error";
         });
+        //Get Carts Cases
+        builder.addCase(fetchCarts.pending,(state)=>{
+            state.cartsLoading = true;
+        });
+        builder.addCase(fetchCarts.fulfilled,(state,action)=>{
+            state.cartsLoading = false;
+            state.carts = action.payload;  
+            state.cartsError = '';
+        });
+        builder.addCase(fetchCarts.rejected,(state,action)=>{
+            state.cartsLoading = false;
+            state.carts = [];
+            state.cartsError = action.error.message || "Carts Loading Error";
+        });
     }
 });
 
 export default posPageSlice.reducer;
 
-export const {filterByCategory,filterBySearchValue,setProductAddLoading,fetchProduct} = posPageSlice.actions;
+export const {filterByCategory,filterBySearchValue,setProductAddLoading,fetchProduct,filterCartBySearchValue} = posPageSlice.actions;
