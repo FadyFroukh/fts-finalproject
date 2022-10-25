@@ -289,4 +289,4 @@ const posPageSlice = createSlice({
 
 export default posPageSlice.reducer;
 
-export const {filterByCategory,filterBySearchValue,setProductAddLoading,fetchProduct,filterCartBySearchValue} = posPageSlice.actions;
+export const {filterByCategory,filterBySearchValue,setProductAddLoading,fetchProduct} = posPageSlice.actions;

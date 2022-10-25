@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../../hooks/hooks";
-import { Cart, filterCartBySearchValue,deleteCart, fetchCarts } from "../posPageSlice";
+import { Cart,deleteCart, fetchCarts } from "../posPageSlice";
 import styles from "../styles/PosPage.module.css";
 import CartTable from "./CartTable";
 import ProductsSearch from "./ProductsSearch";
@@ -14,11 +14,7 @@ type CartBodyProps = {
 const CartBody = ({cart}:CartBodyProps) => {
 
   const dispatch = useAppDispatch();
-
-  const searchFunction = (values:values)=>{
-    dispatch(filterCartBySearchValue(values.searchText))
-  };
-
+  
   const handleDeleteCart = (id:number)=>{
     dispatch(deleteCart(id));
     dispatch(fetchCarts());
