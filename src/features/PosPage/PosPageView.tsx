@@ -8,8 +8,7 @@ import AddProductForm from "./components/AddProductForm";
 import { createContext, Dispatch, SetStateAction, useState } from "react";
 import DeleteProductForm from "./components/DeleteProductForm";
 import EditProductForm from "./components/EditProductForm";
-import { filterBySearchValue, Product } from "./posPageSlice";
-import { useAppDispatch } from "../../hooks/hooks";
+import { Product } from "./posPageSlice";
 import CartsModal from "./components/CartsModal";
 
 export type PosPageContext = {
