@@ -93,10 +93,10 @@
     @include flex-item-center();
 }
 
-.add-product-form{
+.add-product-form,.add-category-form,.edit-category-form{
     width: 100%;
 }
-.delete-product-form{
+.delete-product-form, .delete-category{
     margin-top: 20px;
     button{
         margin-right: 10px;

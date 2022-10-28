@@ -72,16 +72,36 @@
       "productPrice": 16,
       "count": 1,
       "id": 2
+    },
+    {
+      "productCode": "code3",
+      "productName": "Eggplant",
+      "productCategory": "vegetables",
+      "productImage": "vegs1.png",
+      "productPrice": 25,
+      "count": 1,
+      "id": 3
+    },
+    {
+      "productCode": "code4",
+      "productName": "Cucmber",
+      "productCategory": "vegetables",
+      "productImage": "vegs1.png",
+      "productPrice": 24,
+      "count": 1,
+      "id": 4
     }
   ],
   "categories": [
     {
+      "categoryId": "category1",
       "categoryName": "fruits",
-      "categoryId": "category1"
+      "id": 1
     },
     {
+      "categoryId": "category2",
       "categoryName": "vegetables",
-      "categoryId": "category2"
+      "id": 2
     }
   ]
 }
