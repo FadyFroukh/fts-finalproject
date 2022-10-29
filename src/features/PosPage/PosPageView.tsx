@@ -78,7 +78,7 @@ const PosPageView = () => {
         setOpen={setDeleteOpen} 
         message="Delete a Product Modal"
         >
-          <DeleteProductForm setDeleteOpen={setDeleteOpen}/>
+          <DeleteProductForm />
         </FormModal>
       }
       {
