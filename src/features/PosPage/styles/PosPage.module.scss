@@ -19,7 +19,7 @@
             .cart-body{
                 @include flex(column);
                 margin-top: 1.5rem;
-                max-height: 500px;
+                max-height: 650px;
                 overflow: auto;
                 .cart-body-header{
                     @include flex(row);
@@ -29,12 +29,13 @@
                 .operations{
                     @include flex(row);
                     justify-content: center;
+                    align-items: center;
                     .operation{
                         background-color: #ccc;
                         border-radius: 5px;
                         margin:0 10px;
-                        width: 30px;
-                        height: 30px;
+                        width: 20px;
+                        height: 20px;
                         cursor: pointer;
                     }
                     .price{
@@ -46,6 +47,17 @@
                         width: 30px;
                         height: 30px;
                     }
+                }
+            }
+            .cart-payment{
+                @include flex(row);
+                margin: 15px 0;
+                button{
+                    flex: 1;
+                    height: 55px;
+                }
+                button:last-of-type{
+                    margin-left: 10px;
                 }
             }
         }
