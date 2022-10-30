@@ -1,7 +1,9 @@
+import PosPageView from "../features/PosPage/PosPageView";
+import styles from "../features/PosPage/styles/PosPage.module.css";
 const POSPage = ()=>{
     return(
-        <main>
-            
+        <main className={styles['pos-page']}>
+            <PosPageView/>
         </main>
     );
 };

@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0;
+  width: 100%;
+}
+.form-section .form-div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 7px;
+  width: 100%;
+}
+.form-section .form-div label {
+  margin: 8px 0;
+}
+.form-section .form-div input, .form-section .form-div div {
+  width: 100%;
+}
+
+.btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.loading-card {
+  width: 80px;
+  height: 80px;
+}
+.loading-card img {
+  width: 100%;
+  height: 100%;
+}
+
+.alert-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 7px 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.actions button {
+  margin-right: 5px;
+}
+
+.zero-count {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-product-form, .add-category-form, .edit-category-form {
+  width: 100%;
+}
+
+.delete-product-form, .delete-category {
+  margin-top: 20px;
+}
+.delete-product-form button, .delete-category button {
+  margin-right: 10px;
+}
+
+.edit-product-form {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pos-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.pos-page .pos-page-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.pos-page .pos-page-wrapper .cart {
+  width: 30%;
+  min-height: 100vh;
+  padding: 1.5rem;
+  background-color: #eeefff;
+}
+.pos-page .pos-page-wrapper .cart .cart-header {
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.pos-page .pos-page-wrapper .cart .cart-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  max-height: 500px;
+  overflow: auto;
+}
+.pos-page .pos-page-wrapper .cart .cart-body .cart-body-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 15px 0;
+}
+.pos-page .pos-page-wrapper .cart .cart-body .operations {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pos-page .pos-page-wrapper .cart .cart-body .operations .operation {
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 0 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.pos-page .pos-page-wrapper .cart .cart-body .operations .price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-top: 3px;
+  width: 30px;
+  height: 30px;
+}
+.pos-page .pos-page-wrapper .pos-main {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  min-height: 100vh;
+}
+.pos-page .pos-page-wrapper .pos-main .pos-header {
+  height: 10vh;
+  padding: 1rem;
+  margin-bottom: 1.3rem;
+}
+.pos-page .pos-page-wrapper .pos-main .pos-header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.pos-page .pos-page-wrapper .pos-main .pos-header nav .categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.pos-page .pos-page-wrapper .pos-main .pos-header nav .categories label {
+  margin-right: 0.5rem;
+}
+.pos-page .pos-page-wrapper .pos-main .search-form {
+  padding: 0 10px;
+  margin-bottom: 1rem;
+}
+.pos-page .pos-page-wrapper .pos-main .search-form div {
+  width: 100%;
+}
+.pos-page .pos-page-wrapper .pos-main .products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.pos-page .pos-page-wrapper .pos-main .products .product {
+  width: 150px;
+  height: 150px;
+  background-color: lightblue;
+  margin: 0 0 0.8rem 0.4rem;
+  border-radius: 1rem;
+}/*# sourceMappingURL=PosPage.module.css.map */

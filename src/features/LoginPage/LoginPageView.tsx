@@ -1,9 +1,9 @@
-import { Field, Form, Formik} from "formik";
+import { Field, Form, Formik, FormikProps, FormikValues} from "formik";
 import InputLabelFade from "../../utilities/components/InputLabelFade";
 import FormPart from "../../utilities/components/FormPart";
 import { Button } from "@mui/material";
 import styles from "../../pages/styles/LoginPage.module.css";
-import { checkUser,selectLoginUser,User} from "./loginPageSlice";
+import { checkUser,selectLoginUser} from "./loginPageSlice";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import LoadingGIF from "../../utilities/components/LoadingGIF";
 import AlertCard from "../../utilities/components/AlertCard";
@@ -15,11 +15,6 @@ type initialValues = {
     password:string
 };
 
-type FieldProps = {
-    field:object,
-    form:object,
-    meta:object
-};
 
 const initialValues : initialValues = {
     id:"",
@@ -61,7 +56,8 @@ const LoginPageView = ()=>{
                     <label htmlFor="id">User ID</label>
                     <Field name='id'>
                     {
-                        (props:FieldProps)=> {
+                        (props)=> {
+                            console.log(props)
                             return <InputLabelFade field={props.field} type='text'/>
                         }
                     }
@@ -71,7 +67,7 @@ const LoginPageView = ()=>{
                     <label htmlFor="password">Password</label>
                     <Field type='password' name='password'>
                     {
-                        (props:FieldProps)=> {
+                        (props)=> {
                             return <InputLabelFade field={props.field} type="password"/>
                         }
                     }

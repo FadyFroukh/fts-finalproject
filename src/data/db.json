@@ -5,5 +5,103 @@
       "username": "fady",
       "password": "123456"
     }
+  ],
+  "carts": [
+    {
+      "products": [
+        {
+          "id": 1,
+          "productCode": "code1",
+          "productName": "Product One",
+          "productCategory": "fruits",
+          "productImage": "fruit1.png",
+          "productPrice": 8,
+          "count": 8
+        },
+        {
+          "id": 2,
+          "productCode": "code2",
+          "productName": "Product Two",
+          "productCategory": "fruits",
+          "productImage": "fruit2.png",
+          "productPrice": 16,
+          "count": 4
+        }
+      ],
+      "id": 1
+    },
+    {
+      "products": [
+        {
+          "id": 1,
+          "productCode": "code1",
+          "productName": "Product One",
+          "productCategory": "fruits",
+          "productImage": "fruit1.png",
+          "productPrice": 8,
+          "count": 6
+        },
+        {
+          "id": 2,
+          "productCode": "code2",
+          "productName": "Product Two",
+          "productCategory": "fruits",
+          "productImage": "fruit2.png",
+          "productPrice": 16,
+          "count": 4
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "productCode": "code1",
+      "productName": "Product One",
+      "productCategory": "fruits",
+      "productImage": "fruit1.png",
+      "productPrice": 8,
+      "count": 1,
+      "id": 1
+    },
+    {
+      "productCode": "code2",
+      "productName": "Product Two",
+      "productCategory": "fruits",
+      "productImage": "fruit2.png",
+      "productPrice": 16,
+      "count": 1,
+      "id": 2
+    },
+    {
+      "productCode": "code3",
+      "productName": "Eggplant",
+      "productCategory": "vegetables",
+      "productImage": "vegs1.png",
+      "productPrice": 25,
+      "count": 1,
+      "id": 3
+    },
+    {
+      "productCode": "code4",
+      "productName": "Cucmber",
+      "productCategory": "vegetables",
+      "productImage": "vegs1.png",
+      "productPrice": 24,
+      "count": 1,
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "categoryId": "category1",
+      "categoryName": "fruits",
+      "id": 1
+    },
+    {
+      "categoryId": "category2",
+      "categoryName": "vegetables",
+      "id": 2
+    }
   ]
 }

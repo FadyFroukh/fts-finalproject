@@ -62,4 +62,39 @@
   align-items: center;
   width: 100%;
   margin: 7px 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.actions button {
+  margin-right: 5px;
+}
+
+.zero-count {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-product-form, .add-category-form, .edit-category-form {
+  width: 100%;
+}
+
+.delete-product-form, .delete-category {
+  margin-top: 20px;
+}
+.delete-product-form button, .delete-category button {
+  margin-right: 10px;
+}
+
+.edit-product-form {
+  margin-top: 20px;
+  width: 100%;
 }/*# sourceMappingURL=utils.module.css.map */

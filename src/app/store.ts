@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
+import categoriesReducer from "../features/CategoriesPage/categoriesPageSlice";
 import loginPageReducer from "../features/LoginPage/loginPageSlice";
+import posPageReducer from "../features/PosPage/posPageSlice";
 
 const store = configureStore({
     reducer:{
-        loginPage:loginPageReducer
+        loginPage:loginPageReducer,
+        posPage:posPageReducer,
+        categoriesSlice:categoriesReducer
     }
 });
 
