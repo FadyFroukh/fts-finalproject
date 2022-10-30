@@ -9,25 +9,43 @@ import { patchCart, fetchCarts, Product } from '../posPageSlice';
 import ZeroCount from '../../../utilities/components/ZeroCount';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { Typography } from '@mui/material';
+import { Tab, Typography } from '@mui/material';
 import styles from "../styles/PosPage.module.css";
 import CloseIcon from '@mui/icons-material/Close';
 import { useAppDispatch } from '../../../hooks/hooks';
+import { useRef, useState } from 'react';
 
 type CartTableProps = {
     products:Product[],
-    cartId:number
+    cartId:number,
+    total:number
 };
 
-export default function CartTable({products,cartId}:CartTableProps) {
+export default function CartTable({products,cartId,total}:CartTableProps) {
 
     const dispatch = useAppDispatch();
+
+    const orderTaxRef = useRef<HTMLDivElement>(null);
+
+    const discountRef = useRef<HTMLDivElement>(null);
+
+    const [orderTax,setOrderTax] = useState(0);
+
+    const [discount,setDiscount] = useState(0);
 
     const handleDeleteFromCart = (cartId:number,productId:number)=>{
         const updatedProducts = products.filter(product=>product.id !== productId)
         dispatch(patchCart({cartId,updatedProducts}));
         dispatch(fetchCarts());
     };
+
+    const handleTaxChange = ()=>{
+        setOrderTax((orderTax)=>Number(orderTaxRef.current?.textContent))
+    }
+
+    const handleDiscountChange = ()=>{
+        setDiscount((discount)=>Number(discountRef.current?.textContent))
+    }
 
     const handleIncrement = (productId:number)=>{
         let updatedProducts = [] as Product[];
@@ -47,8 +65,9 @@ export default function CartTable({products,cartId}:CartTableProps) {
             return prod;
         });
         dispatch(patchCart({cartId,updatedProducts}));
-        dispatch(fetchCarts());
-
+        setTimeout(()=>{
+            dispatch(fetchCarts());
+        },100);
     };
 
     const handleDecrement = (productId:number)=>{
@@ -71,7 +90,9 @@ export default function CartTable({products,cartId}:CartTableProps) {
             return prod;
         });
         dispatch(patchCart({cartId,updatedProducts}));
-        dispatch(fetchCarts());
+        setTimeout(()=>{
+            dispatch(fetchCarts());
+        },100);
     };
 
   return (
@@ -117,6 +138,54 @@ export default function CartTable({products,cartId}:CartTableProps) {
                     </TableCell>
                  </TableRow>
             }
+                <TableRow>
+                    <TableCell>Subtotal</TableCell>
+                    <TableCell></TableCell>
+                    <TableCell>{total} USD</TableCell>
+                    <TableCell>{products.length} Items</TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Order Tax</TableCell>
+                    <TableCell></TableCell>
+                    <TableCell>
+                        <div 
+                        contentEditable 
+                        suppressContentEditableWarning 
+                        ref={orderTaxRef}
+                        onKeyUp={handleTaxChange}
+                        >
+                            0
+                        </div>
+                    </TableCell>
+                    <TableCell>
+                        {((orderTax/100) * total).toFixed(2)} USD
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Discount</TableCell>
+                    <TableCell></TableCell>
+                    <TableCell>
+                        <div
+                            contentEditable
+                            suppressContentEditableWarning
+                            ref={discountRef}
+                            onKeyUp={handleDiscountChange}
+                        >
+                            0
+                        </div>
+                    </TableCell>
+                    <TableCell>
+                        {((discount/100) * total).toFixed(2)}
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>Total</TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell>
+                        {(total + ((orderTax / 100) * total ) - ((discount / 100) * total)).toFixed(2)} USD
+                    </TableCell>
+                </TableRow>
             </>
         </TableBody>
       </Table>

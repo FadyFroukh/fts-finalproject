@@ -10,22 +10,22 @@
     {
       "products": [
         {
-          "id": 1,
-          "productCode": "code1",
-          "productName": "Product One",
-          "productCategory": "fruits",
-          "productImage": "fruit1.png",
-          "productPrice": 8,
-          "count": 8
-        },
-        {
           "id": 2,
           "productCode": "code2",
           "productName": "Product Two",
           "productCategory": "fruits",
           "productImage": "fruit2.png",
           "productPrice": 16,
-          "count": 4
+          "count": 2
+        },
+        {
+          "productCode": "code1",
+          "productName": "Product One",
+          "productCategory": "fruits",
+          "productImage": "fruit1.png",
+          "productPrice": 8,
+          "count": 1,
+          "id": 1
         }
       ],
       "id": 1
@@ -33,25 +33,30 @@
     {
       "products": [
         {
-          "id": 1,
           "productCode": "code1",
           "productName": "Product One",
           "productCategory": "fruits",
           "productImage": "fruit1.png",
           "productPrice": 8,
-          "count": 6
-        },
+          "count": 1,
+          "id": 1
+        }
+      ],
+      "id": 2
+    },
+    {
+      "products": [
         {
-          "id": 2,
           "productCode": "code2",
           "productName": "Product Two",
           "productCategory": "fruits",
           "productImage": "fruit2.png",
           "productPrice": 16,
-          "count": 4
+          "count": 1,
+          "id": 2
         }
       ],
-      "id": 2
+      "id": 3
     }
   ],
   "products": [

@@ -106,3 +106,15 @@
     margin-top: 20px;
     width: 100%;
 }
+.payment-done{
+    @include flex(column);
+    @include flex-center-between();
+    width: 100%;
+    h5{
+        margin: 8px 0;
+    }
+    img{
+        width: 250px;
+        height: 250px;
+    }
+}
