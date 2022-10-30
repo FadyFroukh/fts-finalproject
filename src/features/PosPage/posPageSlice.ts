@@ -20,6 +20,7 @@ export type Product = {
 
 
 export type Category = {
+    id:number,
     categoryId:string,
     categoryName:string
 };

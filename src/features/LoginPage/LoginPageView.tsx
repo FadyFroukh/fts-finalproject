@@ -57,7 +57,6 @@ const LoginPageView = ()=>{
                     <Field name='id'>
                     {
                         (props)=> {
-                            console.log(props)
                             return <InputLabelFade field={props.field} type='text'/>
                         }
                     }
