@@ -26,6 +26,15 @@
           "productImage": "fruit2.png",
           "productPrice": 16,
           "count": 4
+        },
+        {
+          "productCode": "code3",
+          "productName": "Eggplant",
+          "productCategory": "vegetables",
+          "productImage": "vegs1.png",
+          "productPrice": 25,
+          "count": 1,
+          "id": 3
         }
       ],
       "id": 1
@@ -57,29 +66,26 @@
   "products": [
     {
       "productCode": "code1",
-      "productName": "Product One",
+      "productName": "Bananas",
       "productCategory": "fruits",
       "productImage": "fruit1.png",
       "productPrice": 8,
-      "count": 1,
       "id": 1
     },
     {
       "productCode": "code2",
-      "productName": "Product Two",
+      "productName": "Apples",
       "productCategory": "fruits",
       "productImage": "fruit2.png",
       "productPrice": 16,
-      "count": 1,
       "id": 2
     },
     {
       "productCode": "code3",
       "productName": "Eggplant",
       "productCategory": "vegetables",
-      "productImage": "vegs1.png",
+      "productImage": "vegs2.png",
       "productPrice": 25,
-      "count": 1,
       "id": 3
     },
     {

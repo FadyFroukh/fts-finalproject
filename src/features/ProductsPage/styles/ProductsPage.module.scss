@@ -1,0 +1,45 @@
+@import "../../../utilities/styles/utils.module.scss";
+
+.products-page{
+    @include flex(column);
+    min-height: 100vh;
+    padding: 1rem;
+    .products-main{
+        @include flex(column);
+        min-height: 100vh;
+        width: 100%;
+        header{
+            height: 10vh;
+            margin-bottom: 1.3rem;
+            nav{
+                @include flex(row);
+                @include flex-item-between();
+                .categories{
+                    @include flex(row);
+                    @include flex-item-center();
+                    label{
+                        margin-right: .5rem;
+                    }
+                }
+            }
+        }
+        .products{
+            @include flex(row);
+            flex-wrap: wrap;
+            .product{
+                width: 150px;
+                height: 150px;
+                background-color: lightblue;
+                margin: 0  0 .8rem .4rem;
+                border-radius: 1rem;
+            }
+        }
+        form{
+            padding: 0 10px;
+            margin-bottom: 1rem;
+            div{
+                width: 100%;
+            }
+        }
+    }
+}

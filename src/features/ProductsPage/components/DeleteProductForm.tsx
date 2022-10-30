@@ -3,14 +3,14 @@ import {useContext} from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
 import AlertCard from "../../../utilities/components/AlertCard";
 import LoadingGIF from "../../../utilities/components/LoadingGIF";
-import { deleteProduct,fetchProducts,selectPosPage,setProductAddLoading } from "../posPageSlice";
-import { posContext } from "../PosPageView";
-import styles from "../styles/PosPage.module.css";
+import { deleteProduct,fetchProducts,selectPosPage,setProductAddLoading } from "../../PosPage/posPageSlice";
+import { ProductsPageContext } from "../ProductsPageView";
+import styles from "../styles/ProductsPage.module.css";
 
 
 const DeleteProductForm = () => {
 
-    const {productId,setDeleteOpen} = useContext(posContext);
+    const {productId,setDeleteOpen} = useContext(ProductsPageContext);
 
     const posPage = useAppSelector(selectPosPage);
 
