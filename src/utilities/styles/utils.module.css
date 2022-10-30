@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0;
+  width: 100%;
+}
+.form-section .form-div {
+  display: flex;
+  flex-direction: column;
+  margin-right: 7px;
+  width: 100%;
+}
+.form-section .form-div label {
+  margin: 8px 0;
+}
+.form-section .form-div input, .form-section .form-div div {
+  width: 100%;
+}
+
+.btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.loading-card {
+  width: 80px;
+  height: 80px;
+}
+.loading-card img {
+  width: 100%;
+  height: 100%;
+}
+
+.alert-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 7px 0;
+}/*# sourceMappingURL=utils.module.css.map */
