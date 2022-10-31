@@ -1,9 +1,9 @@
-import { Formik,Form, Field,useFormikContext } from "formik";
+import { Formik,Form, Field, FieldProps } from "formik";
 import InputLabelFade from "../../../utilities/components/InputLabelFade";
 import styles from "../styles/PosPage.module.css";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { filterBySearchValue } from "../posPageSlice";
-import {useEffect } from "react";
+import {FormEvent } from "react";
 import { InputLabel } from "@mui/material";
 
 type initialValues = {
@@ -17,28 +17,18 @@ const initialValues : initialValues = {
 const ProductsSearch = () => {
 
   const dispatch = useAppDispatch();
-  
-  const FormObserver: React.FC = () => {
-    const {values} = useFormikContext();
-
-    useEffect(() => {
-      dispatch(filterBySearchValue(values?.searchText));
-    }, [values]);
-
-    return null;
-  };
 
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={(values)=>{}}
     >
-      <Form method="POST" className={styles['search-form']}>
-        <FormObserver/>
+      <Form method="POST" className={styles['search-form']} 
+      onChange={(e:FormEvent)=>dispatch(filterBySearchValue((e.target as HTMLInputElement).value))}>
           <InputLabel>Search a Product By Name</InputLabel>
           <Field name='searchText'>
             {
-              (props)=> {
+              (props:FieldProps)=> {
                 return (
                   
                 <InputLabelFade field={props.field} type='text'/>

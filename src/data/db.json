@@ -45,17 +45,7 @@
       "id": 2
     },
     {
-      "products": [
-        {
-          "productCode": "code2",
-          "productName": "Product Two",
-          "productCategory": "fruits",
-          "productImage": "fruit2.png",
-          "productPrice": 16,
-          "count": 1,
-          "id": 2
-        }
-      ],
+      "products": [],
       "id": 3
     }
   ],
