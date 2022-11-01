@@ -59,7 +59,7 @@
 * axios
 * json-server
 
-##Folder Structure
+## Folder Structure
 **1. Public**
 * Pictures - has pictures used in the development of the project
 **2. src**
