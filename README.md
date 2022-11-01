@@ -5,7 +5,7 @@
 ## Business Requirements
 * To solve a supermarket needs to accelerate the selling process and to store data effectively
 
-#User Requirements
+##User Requirements
 * To create a Point of Sales Management System 
 
 ## Functional Requirements
