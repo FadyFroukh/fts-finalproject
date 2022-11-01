@@ -80,7 +80,7 @@
 
 
 ## How to Use The Project
-**Downloading The Project**
+1. Downloading The Project
 * Download the code directly from github or clone the repository
 * Create a reactjs & typescript project using vite , **the command is :** npm create vite fts-finalproject
 * Run **npm i -g json-server** to install the mock server globally
@@ -88,7 +88,7 @@
 * Run **npm i** to install the rest of the needed dependencies
 * Run **json-server --watch src/data/db.json --port 4000** to start the mock server
 * Run npm run dev inside the terminal , and you should be good to go!
-**Navigating The Project**
+2. Navigating The Project
 * After you run the project you will be greated with a Login Form
 * Enter your id and password to get to the main page , which happens to be the **Pos Page**
 * The pages will have the needed components to do what have been illustrated in the Functional Requirments Section
