@@ -1,5 +1,5 @@
 import { InputLabel,Button } from "@mui/material"
-import { Field } from "formik"
+import { Field, FieldProps } from "formik"
 import FormPart from "../../../utilities/components/FormPart"
 import InputLabelFade from "../../../utilities/components/InputLabelFade"
 import styles from '../styles/CategoriesPage.module.css';
@@ -11,7 +11,7 @@ const CategoryForm = () => {
             <InputLabel required htmlFor="categoryId">Category ID</InputLabel>
             <Field name='categoryId'>
                 {
-                    (props)=>{
+                    (props:FieldProps)=>{
                         return <InputLabelFade field={props.field} type='text'/>
                     }
                 }
@@ -20,7 +20,7 @@ const CategoryForm = () => {
                 <InputLabel required htmlFor="categoryName">Category Name</InputLabel>
                 <Field name='categoryName'>
                     {
-                        (props)=>{
+                        (props:FieldProps)=>{
                             return <InputLabelFade field={props.field} type='text'/>
                         }
                     }

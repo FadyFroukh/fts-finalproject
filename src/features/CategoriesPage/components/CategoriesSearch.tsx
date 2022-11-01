@@ -1,8 +1,8 @@
-import { Formik,Form, Field,useFormikContext } from "formik";
+import { Formik,Form, Field, FieldProps } from "formik";
 import InputLabelFade from "../../../utilities/components/InputLabelFade";
 import styles from "../styles/CategoriesPage.module.css";
 import { useAppDispatch } from "../../../hooks/hooks";
-import {useEffect } from "react";
+import {FormEvent } from "react";
 import { InputLabel } from "@mui/material";
 import { searchCategoriesByName } from "../categoriesPageSlice";
 
@@ -17,28 +17,20 @@ const initialValues : initialValues = {
 const CategoriesSearch = () => {
 
   const dispatch = useAppDispatch();
-  
-  const FormObserver: React.FC = () => {
-    const {values} = useFormikContext();
 
-    useEffect(() => {
-        dispatch(searchCategoriesByName(values?.searchText));
-    }, [values]);
-
-    return null;
-  };
 
   return (
     <Formik
       initialValues={initialValues}
       onSubmit={()=>{}}
     >
-      <Form method="POST" className={styles['search-form']}>
-        <FormObserver/>
+      <Form method="POST" className={styles['search-form']} 
+        onChange={(e:FormEvent)=>dispatch(searchCategoriesByName((e.target as HTMLInputElement).value))}
+      >
           <InputLabel>Search a Category By Name</InputLabel>
           <Field name='searchText'>
             {
-              (props)=> {
+              (props:FieldProps)=> {
                 return (
                     <InputLabelFade field={props.field} type='text'/>
                 )
