@@ -1,0 +1,36 @@
+@import "../../../utilities/styles/utils.module.scss";
+.categories-page{
+    @include flex(column);
+    min-height: 100vh;
+    padding: 15px;
+    .categories-main{
+        @include flex(column);
+        .categories-header{
+            height: 10vh;
+            @include flex(row);
+            @include flex-center-between();
+        }
+        .search-form{
+            width: 100%;
+            margin-bottom: 20px;
+            div{
+                width: 100%;
+            }
+        }
+        .categories-body{
+            @include flex(column);
+            flex-wrap: wrap;
+            .category{
+                .category-header{
+                    @include flex(row);
+                    @include flex-center-between();
+                    margin: 6px 0;
+                }
+                margin: 10px 0;
+                .category-products{
+                    @include flex(row);
+                }
+            }
+        }
+    }
+}

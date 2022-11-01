@@ -55,12 +55,11 @@ const LoginPageView = ()=>{
                 <FormPart>
                     <label htmlFor="id">User ID</label>
                     <Field name='id'>
-                    {
-                        (props:FieldProps)=> {
-                            console.log(props)
-                            return <InputLabelFade field={props.field} type='text'/>
+                        {
+                            (props:FieldProps)=> {
+                                return <InputLabelFade field={props.field} type='text'/> 
+                            }
                         }
-                    }
                     </Field>
                 </FormPart>
                 <FormPart>
