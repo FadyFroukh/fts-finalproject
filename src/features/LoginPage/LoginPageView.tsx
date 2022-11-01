@@ -1,4 +1,4 @@
-import { Field, Form, Formik, FormikProps, FormikValues} from "formik";
+import { Field, FieldProps, Form, Formik, FormikProps, FormikValues} from "formik";
 import InputLabelFade from "../../utilities/components/InputLabelFade";
 import FormPart from "../../utilities/components/FormPart";
 import { Button } from "@mui/material";
@@ -55,18 +55,19 @@ const LoginPageView = ()=>{
                 <FormPart>
                     <label htmlFor="id">User ID</label>
                     <Field name='id'>
-                    {
-                        (props)=> {
-                            return <InputLabelFade field={props.field} type='text'/>
+                        {
+                            (props:FieldProps)=> {
+                                return <InputLabelFade field={props.field} type='text'/> 
+                            }
                         }
-                    }
+                        
                     </Field>
                 </FormPart>
                 <FormPart>
                     <label htmlFor="password">Password</label>
                     <Field type='password' name='password'>
                     {
-                        (props)=> {
+                        (props:FieldProps)=> {
                             return <InputLabelFade field={props.field} type="password"/>
                         }
                     }

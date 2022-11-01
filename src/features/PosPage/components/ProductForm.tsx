@@ -2,7 +2,7 @@ import CustomSelect from "../../../utilities/components/CustomSelect";
 import FormPart from "../../../utilities/components/FormPart";
 import InputLabelFade from "../../../utilities/components/InputLabelFade";
 import { Button, InputLabel } from "@mui/material";
-import { Field } from "formik";
+import { Field, FieldProps } from "formik";
 import styles from '../styles/PosPage.module.css';
 
 const ProductForm = () => {
@@ -12,7 +12,7 @@ const ProductForm = () => {
             <InputLabel htmlFor="productCode">Product Code</InputLabel>
             <Field name='productCode'>
                 {
-                    (props)=>{
+                    (props:FieldProps)=>{
                         return <InputLabelFade field={props.field} type='text'/>
                     }
                 }
@@ -22,7 +22,7 @@ const ProductForm = () => {
             <InputLabel htmlFor="productName">Product Name</InputLabel>
             <Field name='productName'>
                 {
-                    (props)=>{
+                    (props:FieldProps)=>{
                         return <InputLabelFade field={props.field} type='text'/>
                     }
                 }
@@ -32,7 +32,7 @@ const ProductForm = () => {
             <InputLabel htmlFor="productCategory">Product Category</InputLabel>
             <Field name='productCategory'>
                 {
-                    (props)=>{
+                    (props:FieldProps)=>{
                         return <CustomSelect field={props.field}/>
                     }
                 }
@@ -42,7 +42,7 @@ const ProductForm = () => {
             <InputLabel htmlFor="productImage">Product Image</InputLabel>
             <Field name='productImage'>
                 {
-                    (props)=>{
+                    (props:FieldProps)=>{
                         return <InputLabelFade field={props.field} type='text'/>
                     }
                 }
@@ -52,7 +52,7 @@ const ProductForm = () => {
             <InputLabel htmlFor="productPrice">Product Price</InputLabel>
             <Field name='productPrice'>
                 {
-                    (props)=>{
+                    (props:FieldProps)=>{
                         return <InputLabelFade field={props.field} type='number'/>
                     }
                 }
