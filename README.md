@@ -60,9 +60,9 @@
 * json-server
 
 ## Folder Structure
-**1. Public**
+1. Public
 * Pictures - has pictures used in the development of the project
-**2. src**
+2. src
 * app - has the redux store file
 * data - has the db.json file , which is used to mock the backend server
 * features - has four feature folders, each folder is dedicated to one of the pages inside the project
