@@ -80,7 +80,7 @@
 
 
 ## How to Use The Project
-**Downloading The Project*
+**Downloading The Project**
 * Download the code directly from github or clone the repository
 * Create a reactjs & typescript project using vite , **the command is :** npm create vite fts-finalproject
 * Run **npm i -g json-server** to install the mock server globally
