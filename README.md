@@ -71,12 +71,12 @@
 * utilities - has two folders , which are components and styles , those two are used for components that are used mulitple times to reduce the amount of repetition
 * App.tsx - has the main routes for the project
 * main.tsx - has the root of the project component
-**3. index.html**
-**4. package-lock.json**
-**5. package.json*
-**6. tsconfig.json**
-**7. tsconfig.node.json**
-**8. vite.config.ts**
+3. index.html
+4. package-lock.json
+5. package.json
+6. tsconfig.json
+7. tsconfig.node.json
+8. vite.config.ts
 
 
 ## How to Use The Project
