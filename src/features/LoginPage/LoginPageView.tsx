@@ -60,6 +60,7 @@ const LoginPageView = ()=>{
                                 return <InputLabelFade field={props.field} type='text'/> 
                             }
                         }
+                        
                     </Field>
                 </FormPart>
                 <FormPart>
